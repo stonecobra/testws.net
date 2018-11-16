@@ -1,0 +1,94 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>testws.net</title>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/pure-dialog.min.css" />
+  <link rel="stylesheet" href="/css/index.css" />
+</head>
+
+<body class="anonymous">
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+    <h5 class="my-0 mr-md-auto font-weight-normal">TestWS</h5>
+    <nav class="my-2 my-md-0 mr-md-3"><a class="p-2 text-dark" href="#">Favorites</a><a class="p-2 text-dark" href="#">Stores</a><span class="p-2 text-dark" id="profileName"></span></nav><a class="btn btn-outline-primary" id="loginBtn" href="#" onclick="loginmodal.showModal()">Login</a><a class="btn btn-outline-primary" id="logoutBtn" href="#" onclick="xsiteLogout()">Logout</a>
+  </div>
+  <h1></h1>
+  <div class="container">
+    <div class="card-deck mb-3 text-center" id="deck">
+      <div class="card mb-4 box-shadow">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">$1 Tool</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">$1 </h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>Item 1</li>
+            <li>Item 2</li>
+          </ul>
+          <button class="btn btn-lg btn-block btn-outline-primary" type="button">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card mb-4 box-shadow">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">$2 Tool</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">$2</h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>Item 1</li>
+            <li>Item 2</li>
+          </ul>
+          <button class="btn btn-lg btn-block btn-outline-primary" type="button">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card mb-4 box-shadow">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">$5 Tool</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">$5</h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>Item 1</li>
+            <li>Item 2</li>
+          </ul>
+          <button class="btn btn-lg btn-block btn-outline-primary" type="button">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card mb-4 box-shadow" id="private-details"></div>
+    </div>
+  </div>
+  <pure-dialog id="loginmodal">
+    <div class="container">
+      <form class="form-signin" id="loginform">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label class="sr-only" for="inputEmail">Email address</label>
+        <input class="form-control" id="inputEmail" name="username" type="text" placeholder="Username" required="" autofocus="" autocomplete="off" />
+        <label class="sr-only" for="inputPassword">Password</label>
+        <input class="form-control" id="inputPassword" name="password" type="password" placeholder="Password" required="" autocomplete="off" />
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me" /> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+    </div>
+  </pure-dialog>
+  <script src="/js/cors.js"></script>
+  <script src="/js/document-register-element.js"></script>
+  <script src="/js/pure-dialog.min.js"></script>
+  <script>
+    var loginform = document.getElementById('loginform');
+    loginform.addEventListener("submit", function(event) {
+      console.log('logging in user: ', loginform.elements.username.value);
+      xsiteLogin(loginform.elements.username.value, loginform.elements.password.value)
+      document.getElementById('loginmodal').close();
+      event.preventDefault();
+    });
+  </script>
+</body>
+
+</html>

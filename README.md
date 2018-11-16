@@ -1,2 +1,2 @@
-# testpb.net
-testpb.net now deployment
+# testws.net
+testws.net now deployment

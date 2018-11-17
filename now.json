@@ -1,5 +1,5 @@
 {
     "version": 2,
-    "alias": ["testws.net", "www.testws.net"],
+    "alias": ["testws.net"],
     "public": true
 }

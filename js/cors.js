@@ -33,7 +33,7 @@ function xsiteStatusCheck() {
 }
 
 xsiteStatusCheck();
-window.setInterval(xsiteStatusCheck, 10000);
+window.setInterval(xsiteStatusCheck, 1000);
 
 function xsiteLogin (username, password) {
 	console.log('xsiteLogin - creating CORS request for user: ' + username);
